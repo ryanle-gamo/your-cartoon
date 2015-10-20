@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="FavoriteTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW2-XG-jus">
+                        <rect key="frame" x="10" y="7" width="100" height="75"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mjr-fv-Q7l">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mjr-fv-Q7l" firstAttribute="leading" secondItem="cW2-XG-jus" secondAttribute="leading" id="56i-kS-SQk"/>
+                            <constraint firstAttribute="trailing" secondItem="mjr-fv-Q7l" secondAttribute="trailing" id="MPe-UP-uhx"/>
+                            <constraint firstItem="mjr-fv-Q7l" firstAttribute="top" secondItem="cW2-XG-jus" secondAttribute="top" id="OWz-PQ-tk4"/>
+                            <constraint firstAttribute="bottom" secondItem="mjr-fv-Q7l" secondAttribute="bottom" id="RFa-En-BuW"/>
+                            <constraint firstAttribute="width" constant="100" id="UtS-MY-XaZ"/>
+                            <constraint firstAttribute="height" constant="75" id="vcy-mz-gLg"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rabbit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-zh-eai">
+                        <rect key="frame" x="120" y="13" width="155" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="OvZ-xi-DDj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osW-BE-fX3">
+                        <rect key="frame" x="120" y="36" width="155" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Rd5-Da-RVR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weM-qn-efC">
+                        <rect key="frame" x="120" y="58" width="155" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="bBV-sd-a9b"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="cW2-XG-jus" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1L9-5o-7Je"/>
+                    <constraint firstItem="wgQ-zh-eai" firstAttribute="leading" secondItem="cW2-XG-jus" secondAttribute="trailing" constant="10" id="4d1-rz-9GS"/>
+                    <constraint firstItem="osW-BE-fX3" firstAttribute="leading" secondItem="cW2-XG-jus" secondAttribute="trailing" constant="10" id="4gv-ck-jnJ"/>
+                    <constraint firstItem="wgQ-zh-eai" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="78i-aq-qwb"/>
+                    <constraint firstAttribute="trailing" secondItem="wgQ-zh-eai" secondAttribute="trailing" constant="12" id="C0Q-x1-00W"/>
+                    <constraint firstItem="cW2-XG-jus" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="LWE-DU-kd5"/>
+                    <constraint firstItem="osW-BE-fX3" firstAttribute="top" secondItem="wgQ-zh-eai" secondAttribute="bottom" constant="2" id="RbS-ud-feJ"/>
+                    <constraint firstItem="weM-qn-efC" firstAttribute="top" secondItem="osW-BE-fX3" secondAttribute="bottom" constant="1" id="aE5-wl-J6b"/>
+                    <constraint firstAttribute="trailing" secondItem="osW-BE-fX3" secondAttribute="trailing" constant="12" id="caS-2N-eim"/>
+                    <constraint firstItem="weM-qn-efC" firstAttribute="leading" secondItem="cW2-XG-jus" secondAttribute="trailing" constant="10" id="qrl-PL-Vev"/>
+                    <constraint firstAttribute="trailing" secondItem="weM-qn-efC" secondAttribute="trailing" constant="12" id="rCL-D2-cSp"/>
+                    <constraint firstAttribute="bottom" secondItem="cW2-XG-jus" secondAttribute="bottom" constant="7" id="vqb-5c-wVL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="imgViewThumbnail" destination="mjr-fv-Q7l" id="LzT-uA-TfS"/>
+                <outlet property="lblCategory" destination="osW-BE-fX3" id="csO-ob-3Vm"/>
+                <outlet property="lblStep" destination="weM-qn-efC" id="FJk-K2-DJg"/>
+                <outlet property="lblTitle" destination="wgQ-zh-eai" id="qys-6T-PRa"/>
+            </connections>
+            <point key="canvasLocation" x="213" y="184"/>
+        </tableViewCell>
+    </objects>
+</document>

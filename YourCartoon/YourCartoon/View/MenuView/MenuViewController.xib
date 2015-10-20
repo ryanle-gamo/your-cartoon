@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
+            <connections>
+                <outlet property="headerLabel" destination="RC1-MO-IQH" id="Gco-5h-RYe"/>
+                <outlet property="tblMenu" destination="oh6-Ak-qh8" id="BKh-6R-cSN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewHeader" destination="6hY-NV-dcm" id="hvw-6q-5gi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oh6-Ak-qh8">
+                    <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zIy-zB-SMI"/>
+                        <outlet property="delegate" destination="-1" id="2h3-GL-2JZ"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hY-NV-dcm" userLabel="view_header">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC1-MO-IQH">
+                            <rect key="frame" x="90" y="24" width="140" height="33"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMG-ci-vCe">
+                            <rect key="frame" x="248" y="24" width="64" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="64" id="jma-7s-iyC"/>
+                                <constraint firstAttribute="height" constant="33" id="vbe-oz-Hhg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.0039215688589999999" green="0.56078433989999998" blue="0.83529418710000003" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="touchCancel:" destination="-1" eventType="touchUpInside" id="gZI-oe-A88"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="mMG-ci-vCe" secondAttribute="trailing" constant="8" id="3z5-kK-Ncb"/>
+                        <constraint firstAttribute="width" constant="320" id="6wI-hs-xdv"/>
+                        <constraint firstItem="mMG-ci-vCe" firstAttribute="top" secondItem="6hY-NV-dcm" secondAttribute="top" constant="24" id="8T6-nA-Sx0"/>
+                        <constraint firstAttribute="height" constant="70" id="8bv-TR-U3z"/>
+                        <constraint firstAttribute="bottom" secondItem="mMG-ci-vCe" secondAttribute="bottom" constant="13" id="QB2-jh-p7p"/>
+                        <constraint firstItem="mMG-ci-vCe" firstAttribute="leading" secondItem="RC1-MO-IQH" secondAttribute="trailing" constant="18" id="gVB-wf-OeH"/>
+                        <constraint firstAttribute="bottom" secondItem="RC1-MO-IQH" secondAttribute="bottom" constant="13" id="hY3-FG-rbn"/>
+                        <constraint firstItem="RC1-MO-IQH" firstAttribute="top" secondItem="6hY-NV-dcm" secondAttribute="top" constant="24" id="xmj-qk-OBl"/>
+                        <constraint firstItem="RC1-MO-IQH" firstAttribute="leading" secondItem="6hY-NV-dcm" secondAttribute="leading" constant="90" id="y8i-fd-fj8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="oh6-Ak-qh8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2jU-tb-HXb"/>
+                <constraint firstAttribute="trailing" secondItem="6hY-NV-dcm" secondAttribute="trailing" id="4Ob-ef-nPb"/>
+                <constraint firstItem="6hY-NV-dcm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5Vp-yO-vGL"/>
+                <constraint firstAttribute="trailing" secondItem="oh6-Ak-qh8" secondAttribute="trailing" id="HAh-eA-aYa"/>
+                <constraint firstItem="oh6-Ak-qh8" firstAttribute="top" secondItem="6hY-NV-dcm" secondAttribute="bottom" id="b6V-ZG-tDr"/>
+                <constraint firstItem="6hY-NV-dcm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g68-xP-JEm"/>
+                <constraint firstAttribute="bottom" secondItem="oh6-Ak-qh8" secondAttribute="bottom" id="iBt-94-cQo"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="298" y="273"/>
+        </view>
+    </objects>
+</document>
