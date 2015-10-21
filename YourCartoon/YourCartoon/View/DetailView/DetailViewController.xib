@@ -182,7 +182,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2N-RO-mx5" userLabel="view_ads1">
                             <rect key="frame" x="0.0" y="398" width="320" height="50"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Zrc-6x-WZ7"/>
                             </constraints>

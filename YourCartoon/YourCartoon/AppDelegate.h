@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AP_SDK.h"
 
 @class ViewController;
 @class ConfigurationObj;

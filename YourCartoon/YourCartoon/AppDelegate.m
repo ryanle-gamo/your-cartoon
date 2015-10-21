@@ -33,7 +33,15 @@
     self.configuration = [[ConfigurationObj alloc] init];
     self.youtubeVideos = [[NSMutableArray alloc] init];
     self.youtubePlaylists = [[NSMutableArray alloc] init];
+    [self initAds];
     return YES;
+}
+
+- (void)initAds {
+    STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
+    sdk.appID = STARTAPP_APP_ID;
+    
+    [AP_SDK setupForAppPortalIdentifier:AIRPUSH_ID];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

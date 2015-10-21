@@ -214,8 +214,6 @@
 }
 
 - (void)loadAds2 {
-    STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
-    sdk.appID = self.appDelegate.configuration.startapp_app_id;
     if (self.bannerView == nil) {
         self.bannerView = [[STABannerView alloc] initWithSize:STA_AutoAdSize autoOrigin:STAAdOrigin_Top
                                                 withView:self.viewAd2 withDelegate:nil];
@@ -224,7 +222,6 @@
 }
 
 - (void)loadAds3 {
-    [AP_SDK setupForAppPortalIdentifier:AIRPUSH_ID];
     [AP_SDK showAdWithViewController:self withPlacementId:1 isTestMode:NO];
 }
 

@@ -15,6 +15,8 @@
 
 #define MOPUB_BANNER_ID @"f6c7a56d69a34f78b1b01b22baae368a"
 #define AIRPUSH_ID @"289138"
+#define STARTAPP_APP_ID @"206835170"
+#define STARTAPP_DEV_ID @"101443341"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
