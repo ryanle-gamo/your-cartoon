@@ -73,6 +73,7 @@
     
     [self loadAds1];
     [self loadAds2];
+    [self loadAds3];
     [self loadAdmob];
 }
 
@@ -157,7 +158,11 @@
 }
 
 - (void)loadAds1 {
-    self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_BANNER_SIZE];
+    if (IS_IPAD) {
+        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_LEADERBOARD_SIZE];
+    } else {
+        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_BANNER_SIZE];
+    }
     self.adView.delegate = self;
     CGRect frame = self.adView.frame;
     CGSize size = [self.adView adContentViewSize];
@@ -169,8 +174,13 @@
 
 - (void)loadAds2 {
     if (self.bannerView == nil) {
-        self.bannerView = [[STABannerView alloc] initWithSize:STA_AutoAdSize autoOrigin:STAAdOrigin_Top
-                                                     withView:self.viewAd2 withDelegate:nil];
+        if (IS_IPAD) {
+            self.bannerView = [[STABannerView alloc] initWithSize:STA_PortraitAdSize_768x90 autoOrigin:STAAdOrigin_Top
+                                                         withView:self.viewAd2 withDelegate:nil];
+        } else {
+            self.bannerView = [[STABannerView alloc] initWithSize:STA_AutoAdSize autoOrigin:STAAdOrigin_Top
+                                                         withView:self.viewAd2 withDelegate:nil];
+        }
         [self.viewAd2 addSubview:self.bannerView];
     }
 }
@@ -184,6 +194,10 @@
         self.viewAdmob.adSize = kGADAdSizeSmartBannerPortrait;
     }
     [self.viewAdmob loadRequest:[GADRequest request]];
+}
+
+- (void)loadAds3 {
+    [AP_SDK showAdWithViewController:self withPlacementId:1 isTestMode:NO];
 }
 
 #pragma mark ***** ACTION *****

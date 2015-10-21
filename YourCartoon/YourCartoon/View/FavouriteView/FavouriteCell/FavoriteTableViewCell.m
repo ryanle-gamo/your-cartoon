@@ -20,13 +20,19 @@
     [self setBackgroundColor:[UIColor clearColor]];
     [self.lblTitle setBackgroundColor:[UIColor clearColor]];
     [self.lblTitle setTextColor:TITLE_COLOR];
-    [self.lblTitle setFont:FONT_TITLE_POSTER_DEFAULT];
+    if (IS_IPAD) {
+        [self.lblTitle setFont:IPAD_FONT_TITLE_POSTER_DEFAULT];
+        [self.lblCategory setFont:IPAD_FONT_SUB_TITLE_POSTER_DEFAULT];
+        [self.lblStep setFont:IPAD_FONT_SUB_TITLE_POSTER_DEFAULT];
+    } else {
+        [self.lblTitle setFont:FONT_TITLE_POSTER_DEFAULT];
+        [self.lblCategory setFont:FONT_SUB_TITLE_POSTER_DEFAULT];
+        [self.lblStep setFont:FONT_SUB_TITLE_POSTER_DEFAULT];
+    }
     [self.lblCategory setBackgroundColor:[UIColor clearColor]];
     [self.lblCategory setTextColor:SUB_TITLE_COLOR];
-    [self.lblCategory setFont:FONT_SUB_TITLE_POSTER_DEFAULT];
     [self.lblStep setBackgroundColor:[UIColor clearColor]];
     [self.lblStep setTextColor:SUB_TITLE_COLOR];
-    [self.lblStep setFont:FONT_SUB_TITLE_POSTER_DEFAULT];
     [self.imgViewThumbnail setContentMode:UIViewContentModeScaleToFill];
 }
 

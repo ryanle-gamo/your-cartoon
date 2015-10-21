@@ -70,6 +70,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (IS_IPAD) {
+        return 114;
+    }
     return 90;
 }
 

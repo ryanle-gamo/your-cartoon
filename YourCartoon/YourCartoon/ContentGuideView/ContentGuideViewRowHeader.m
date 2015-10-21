@@ -44,7 +44,11 @@
         [self setBackgroundRowHeader:BACKGROUND_COLOR_ROWHEADER];
         self.lbTitleRowHeader = [[UILabel alloc] init];
         [self.lbTitleRowHeader setBackgroundColor:[UIColor clearColor]];
-        fontTitleRowHeader = FONT_TITLE_ROW_HEADER_DEFAULT;
+        if (IS_IPAD) {
+            fontTitleRowHeader = IPAD_FONT_TITLE_ROW_HEADER_DEFAULT;
+        } else {
+            fontTitleRowHeader = FONT_TITLE_ROW_HEADER_DEFAULT;
+        }
         [self addSubview:self.lbTitleRowHeader];
         pandingLeft = PANDING_LEFT_CONTENT_GUIDE_ROW_HEADER_DEFAULT;
         

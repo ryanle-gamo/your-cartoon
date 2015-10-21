@@ -93,8 +93,13 @@
             heightSubTitlePoster = 0;
             break;
     }
-    fontTitle = FONT_TITLE_POSTER_DEFAULT;
-    fontSubTitle = FONT_SUB_TITLE_POSTER_DEFAULT;
+    if (IS_IPAD) {
+        fontTitle = IPAD_FONT_TITLE_POSTER_DEFAULT;
+        fontSubTitle = IPAD_FONT_SUB_TITLE_POSTER_DEFAULT;
+    } else {
+        fontTitle = FONT_TITLE_POSTER_DEFAULT;
+        fontSubTitle = FONT_SUB_TITLE_POSTER_DEFAULT;
+    }
     
     [lbTitle setBackgroundColor:[UIColor clearColor]];
     [lbTitle setNumberOfLines:2];

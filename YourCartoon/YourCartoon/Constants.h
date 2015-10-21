@@ -56,8 +56,12 @@
 #define HEIGHT_SUB_TITLE_POSTER_DEFAULT 15
 #define TEXT_COLOR_TITLE_POSTER_DEFAULT [UIColor colorWithRed:220.0f/255.0f green:198.0f/255.0f blue:152.0f/255.0f alpha:1.0f]
 #define TEXT_COLOR_RIGHT_LABEL_POSTER_DEFAULT [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
+
 #define FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:12.0f]
 #define FONT_SUB_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial" size:12.0f]
+#define IPAD_FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:14.0f]
+#define IPAD_FONT_SUB_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial" size:14.0f]
+
 #define FONT_RIGHT_LABEL_POSTER_DEFAULT [UIFont fontWithName:@"ArialMT" size:16.0f]
 #define TIME_AUTO_SCROLLING_PROMOSLIDES_DEFAULT 8
 #define _NUMBER_PHOTOS_ITEM_OF_ROW_ (IS_IPAD ? 5 : 3)
@@ -73,6 +77,7 @@
  ** START - MAKE CLAY
  */
 #define FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:14.0f]
+#define IPAD_FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:16.0f]
 #define TITLE_COLOR [UIColor colorWithRed:253.0f/255.0f green:253.0f/255.0f blue:253.0f/255.0f alpha:1.0f]
 #define SUB_TITLE_COLOR [UIColor colorWithRed:161.0f/255.0f green:161.0f/255.0f blue:161.0f/255.0f alpha:1.0f]
 #define BACKGROUND_COLOR [UIColor colorWithRed:29.0f/255.0f green:29.0f/255.0f blue:29.0f/255.0f alpha:1.0f]

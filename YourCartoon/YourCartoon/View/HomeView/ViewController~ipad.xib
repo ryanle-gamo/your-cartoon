@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
                 <outlet property="sgmBar" destination="C4G-w4-j8m" id="8QT-xg-fYN"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kF6-TE-xjy"/>
-                <outlet property="viewAdverd" destination="mZM-xa-5uB" id="qvs-aL-8yX"/>
+                <outlet property="viewAd1" destination="HOt-Sr-kF3" id="qFs-PF-8nz"/>
+                <outlet property="viewAd2" destination="R5m-VS-j5k" id="IFw-p7-TCR"/>
+                <outlet property="viewAdmob" destination="mZM-xa-5uB" id="nui-1k-4tZ"/>
                 <outlet property="viewAll" destination="eyb-tx-9EY" id="3mm-EA-Grc"/>
                 <outlet property="viewContent" destination="cjM-d5-MC6" id="0sf-Og-nWV"/>
                 <outlet property="viewContentGuiView" destination="e4h-Ju-yjT" id="k7x-ai-m24"/>
                 <outlet property="viewFavourite" destination="agI-hu-2rc" id="c5R-uX-cvT"/>
                 <outlet property="viewHeader" destination="Usa-kb-izq" id="XQU-Ge-R8C"/>
-                <outlet property="viewStartApp" destination="HOt-Sr-kF3" id="wOA-Eq-oQX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,6 +29,7 @@
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="C4G-w4-j8m">
                             <rect key="frame" x="214" y="16" width="340" height="29"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="f20-ss-NpR"/>
                                 <constraint firstAttribute="width" constant="340" id="swh-Kl-Id4"/>
@@ -42,40 +44,30 @@
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKb-z8-umm">
                             <rect key="frame" x="705" y="13" width="35" height="35"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="35" id="XCD-ye-qsF"/>
                                 <constraint firstAttribute="height" constant="35" id="xJM-kR-AFV"/>
                             </constraints>
-                            <state key="normal" backgroundImage="menu.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGt-Xu-PPo">
-                            <rect key="frame" x="694" y="8" width="66" height="44"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="66" id="MDq-Xl-8vl"/>
-                                <constraint firstAttribute="height" constant="44" id="qsU-Nm-oFD"/>
-                            </constraints>
-                            <state key="normal">
+                            <state key="normal" backgroundImage="btn_menu">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="LUW-Q4-XON"/>
+                                <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="hAM-8W-D9m"/>
                             </connections>
                         </button>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="IGt-Xu-PPo" secondAttribute="trailing" constant="8" id="2hm-7c-D0G"/>
                         <constraint firstAttribute="bottom" secondItem="ZKb-z8-umm" secondAttribute="bottom" constant="12" id="GVL-NF-zXe"/>
                         <constraint firstItem="ZKb-z8-umm" firstAttribute="top" secondItem="Usa-kb-izq" secondAttribute="top" constant="13" id="HN4-Vw-jEt"/>
                         <constraint firstAttribute="bottom" secondItem="C4G-w4-j8m" secondAttribute="bottom" constant="16" id="KTm-6S-kVO"/>
-                        <constraint firstItem="IGt-Xu-PPo" firstAttribute="top" secondItem="Usa-kb-izq" secondAttribute="top" constant="8" id="WeD-3h-ZUE"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="QiH-zf-6BG"/>
                         <constraint firstAttribute="height" constant="60" id="XHl-1c-MoS"/>
                         <constraint firstAttribute="trailing" secondItem="ZKb-z8-umm" secondAttribute="trailing" constant="28" id="aRR-kh-rQd"/>
                         <constraint firstItem="C4G-w4-j8m" firstAttribute="leading" secondItem="Usa-kb-izq" secondAttribute="leading" constant="214" id="nxS-Mp-aSa"/>
                         <constraint firstItem="C4G-w4-j8m" firstAttribute="top" secondItem="Usa-kb-izq" secondAttribute="top" constant="16" id="rUv-ru-hMv"/>
-                        <constraint firstAttribute="bottom" secondItem="IGt-Xu-PPo" secondAttribute="bottom" constant="8" id="xej-WG-M0W"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjM-d5-MC6" userLabel="view_content">
@@ -86,9 +78,11 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4h-Ju-yjT" userLabel="content">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="854"/>
+                                    <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="e4h-Ju-yjT" firstAttribute="top" secondItem="eyb-tx-9EY" secondAttribute="top" id="7U3-s4-5oz"/>
@@ -99,9 +93,11 @@
                         </view>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agI-hu-2rc" userLabel="view_favourite">
                             <rect key="frame" x="0.0" y="0.0" width="768" height="854"/>
+                            <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -118,15 +114,23 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJA-HY-AVJ" userLabel="view_ads">
                     <rect key="frame" x="0.0" y="934" width="768" height="90"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-Sr-kF3" userLabel="view_startapp">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-Sr-kF3" userLabel="view_ads1">
                             <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5m-VS-j5k" userLabel="view_ads2">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
+                            <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZM-xa-5uB" userLabel="view_admob" customClass="GADBannerView">
                             <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
+                            <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="mZM-xa-5uB" secondAttribute="trailing" id="528-Op-HMv"/>
@@ -141,20 +145,19 @@
                     </constraints>
                 </view>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="wJA-HY-AVJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0q6-CA-dGf"/>
                 <constraint firstItem="Usa-kb-izq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="2ZK-B1-7Qa"/>
-                <constraint firstItem="wJA-HY-AVJ" firstAttribute="top" secondItem="cjM-d5-MC6" secondAttribute="bottom" id="87c-zY-sLs"/>
-                <constraint firstItem="wJA-HY-AVJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BAO-j6-RuF"/>
-                <constraint firstItem="wJA-HY-AVJ" firstAttribute="top" secondItem="cjM-d5-MC6" secondAttribute="bottom" id="DA2-oP-fyi"/>
-                <constraint firstAttribute="trailing" secondItem="wJA-HY-AVJ" secondAttribute="trailing" id="GsX-yY-FJF"/>
-                <constraint firstAttribute="trailing" secondItem="Usa-kb-izq" secondAttribute="trailing" id="KjF-C9-K4A"/>
-                <constraint firstItem="cjM-d5-MC6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PIo-0k-tYY"/>
-                <constraint firstAttribute="bottom" secondItem="wJA-HY-AVJ" secondAttribute="bottom" id="Z7n-Wf-KOV"/>
-                <constraint firstAttribute="trailing" secondItem="cjM-d5-MC6" secondAttribute="trailing" id="fOw-3c-myO"/>
-                <constraint firstItem="Usa-kb-izq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iPc-eq-jRb"/>
-                <constraint firstItem="cjM-d5-MC6" firstAttribute="top" secondItem="Usa-kb-izq" secondAttribute="bottom" id="nLr-wt-vXG"/>
-                <constraint firstItem="cjM-d5-MC6" firstAttribute="top" secondItem="Usa-kb-izq" secondAttribute="bottom" id="zRa-TA-tkg"/>
+                <constraint firstItem="cjM-d5-MC6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AQx-Wl-pYI"/>
+                <constraint firstItem="Usa-kb-izq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BaU-iK-cDa"/>
+                <constraint firstAttribute="bottom" secondItem="wJA-HY-AVJ" secondAttribute="bottom" id="FkY-4W-Oj2"/>
+                <constraint firstAttribute="trailing" secondItem="cjM-d5-MC6" secondAttribute="trailing" id="Rig-z7-dO4"/>
+                <constraint firstAttribute="trailing" secondItem="wJA-HY-AVJ" secondAttribute="trailing" id="aUA-dB-JJh"/>
+                <constraint firstItem="wJA-HY-AVJ" firstAttribute="top" secondItem="cjM-d5-MC6" secondAttribute="bottom" id="aeu-6u-msT"/>
+                <constraint firstItem="cjM-d5-MC6" firstAttribute="top" secondItem="Usa-kb-izq" secondAttribute="bottom" id="dCc-JR-PIi"/>
+                <constraint firstAttribute="trailing" secondItem="Usa-kb-izq" secondAttribute="trailing" id="qtx-bb-FFu"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
@@ -162,6 +165,6 @@
         </view>
     </objects>
     <resources>
-        <image name="menu.png" width="128" height="128"/>
+        <image name="btn_menu" width="60" height="60"/>
     </resources>
 </document>
