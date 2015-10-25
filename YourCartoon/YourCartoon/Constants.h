@@ -42,7 +42,7 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 /***************** MAKE CLAY *****************/
-#define URL_CONFIGURATION       @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/yourcartoon/yourcartoon_configuration.json"
+#define URL_CONFIGURATION       @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/youcartoon/youcartoon_configuration.json"
 /***************** MAKE CLAY *****************/
 
 /*
