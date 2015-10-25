@@ -71,8 +71,11 @@
     [self.viewHeader setBackgroundColor:HEADER_COLOR];
     [self.viewContent setBackgroundColor:BACKGROUND_COLOR];
     if (!IS_IPHONE_4_OR_LESS) {
-        [self.btnFavorite4s setEnabled:NO];
         [self.btnFavorite4s setHidden:YES];
+    } else {
+        [self.videoPreviousButton setHidden:YES];
+        [self.videoNextButton setHidden:YES];
+        [self.btnFavorite setHidden:YES];
     }
 
     [self.lblDetailTitle setTextColor:TITLE_COLOR];
