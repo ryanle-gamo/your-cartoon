@@ -14,6 +14,7 @@
 #define YOUTUBE_VIDEO_URL @"https://www.googleapis.com/youtube/v3/videos?id=%@&part=contentDetails&key=%@"
 
 #define MOPUB_BANNER_ID @"f6c7a56d69a34f78b1b01b22baae368a"
+#define MOPUB_BANNER_ID_IPAD @"3a4db5cca22843298296dcadc2020f57"
 #define AIRPUSH_ID @"289138"
 #define STARTAPP_APP_ID @"206835170"
 #define STARTAPP_DEV_ID @"101443341"

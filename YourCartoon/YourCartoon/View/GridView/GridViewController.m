@@ -95,7 +95,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -159,7 +158,7 @@
 
 - (void)loadAds1 {
     if (IS_IPAD) {
-        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_LEADERBOARD_SIZE];
+        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID_IPAD size:MOPUB_LEADERBOARD_SIZE];
     } else {
         self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_BANNER_SIZE];
     }

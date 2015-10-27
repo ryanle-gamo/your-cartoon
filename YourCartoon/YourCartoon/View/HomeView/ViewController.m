@@ -102,7 +102,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -140,7 +139,7 @@
 
 - (void)loadConfiguration {
     [self showHudLoading];
-    hud.labelText = @"Loading configuration...";
+    hud.labelText = @"Loading video...";
     [[WebAPI getShared] loadConfiguration:^(NSError *error) {
         NSLog(@"ERROR IN GETTING CONFIGURATION");
         [self hideHudLoading];
@@ -163,7 +162,6 @@
                                                       otherButtonTitles:@"OK", nil];
             [thisAlert show];
         } else {
-            hud.labelText = @"Loading video...";
             [self loadYoutubePlaylist];
         }
         NSLog(@"FINISHED");
@@ -204,7 +202,7 @@
 
 - (void)loadAds1 {
     if (IS_IPAD) {
-        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_LEADERBOARD_SIZE];
+        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID_IPAD size:MOPUB_LEADERBOARD_SIZE];
     } else {
         self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_BANNER_SIZE];
     }
