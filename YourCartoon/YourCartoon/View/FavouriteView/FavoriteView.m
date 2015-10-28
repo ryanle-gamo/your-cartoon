@@ -42,6 +42,11 @@
     [self.tblFavorite reloadData];
 }
 
+- (void)reloadTableView {
+    [self.tblFavorite setFrame:self.bounds];
+    [self.tblFavorite reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

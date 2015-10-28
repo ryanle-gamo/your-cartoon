@@ -17,4 +17,5 @@
 @interface FavoriteView : UIView <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) id<FavoriteViewDelegate> favoriteDelegate;
 - (void)initUIWithData:(NSMutableArray *)data;
+- (void)reloadTableView;
 @end

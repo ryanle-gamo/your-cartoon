@@ -20,9 +20,9 @@
 #define MAX_RESULT 50
 #define _HEIGHT_TOP_VIEW_ 120*RATIO_SCALE_IPHONE
 
-@interface GridViewController ()<MPAdViewDelegate> {
-    ContentGuideView *contentGuideView;
-}
+@interface GridViewController ()<MPAdViewDelegate>
+
+@property (nonatomic, strong) ContentGuideView *contentGuideView;
 @property (nonatomic, strong) PLObject *playlist;
 @property (nonatomic, strong) NSString *nextPlaylistPageToken;
 @property (nonatomic, strong) NSMutableArray *videos;
@@ -83,13 +83,15 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (!contentGuideView) {
-        contentGuideView = [[ContentGuideView alloc] initWithFrame:self.viewContent.bounds];
-        [contentGuideView setBackgroundColor:BACKGROUND_COLOR];
-        [contentGuideView setDataSource:self];
-        [contentGuideView setDelegate:self];
-        [self.viewContent addSubview:contentGuideView];
+    if (!self.contentGuideView) {
+        self.contentGuideView = [[ContentGuideView alloc] initWithFrame:self.viewContent.bounds];
+        [self.contentGuideView setBackgroundColor:BACKGROUND_COLOR];
+        [self.contentGuideView setDataSource:self];
+        [self.contentGuideView setDelegate:self];
+        [self.viewContent addSubview:self.contentGuideView];
         [self loadYoutubeVideo];
+    } else {
+        [self updateContentGuideViewFrame];
     }
 }
 
@@ -124,7 +126,7 @@
                                   self.videos = [VideoObject arrayFromDictionary:responseObject];
                                   [self cookVideos];
                                   [self.playlist.videoArray addObjectsFromArray:self.videos];
-                                  [contentGuideView holdPositionReloadData];
+                                  [self.contentGuideView holdPositionReloadData];
                                   [self hideHudLoading];
                               }
                               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -139,6 +141,18 @@
     }
 }
 
+- (void)updateContentGuideViewFrame {
+    if (IS_IPAD) {
+        CGRect frame = self.contentGuideView.frame;
+        if (frame.size.height != self.viewContent.frame.size.height) {
+            frame.size.width = self.viewContent.frame.size.width;
+            frame.size.height = self.viewContent.frame.size.height;
+            [self.contentGuideView setFrame:frame];
+            [self.contentGuideView reloadData];
+        }
+    }
+}
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                 duration:(NSTimeInterval)duration {
     [self.adView rotateToOrientation:toInterfaceOrientation];
@@ -149,6 +163,8 @@
     CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
     CGFloat bottomAlignedY = self.view.bounds.size.height - size.height;
     self.adView.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
+    
+    [self updateContentGuideViewFrame];
 }
 
 #pragma mark - <MPAdViewDelegate>

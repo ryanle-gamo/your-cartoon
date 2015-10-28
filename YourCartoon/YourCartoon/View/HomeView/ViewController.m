@@ -23,14 +23,13 @@
 #import "WebAPI.h"
 #import "AP_SDK.h"
 
-#define MAX_RESULT 20
+#define MAX_RESULT 10
 
-@interface ViewController() <ContentGuideViewDataSource, ContentGuideViewDelegate, MPAdViewDelegate> {
-    ContentGuideView *contentGuideView;
-    FavoriteView *favoriteView;
-    MBProgressHUD *hud;
-}
+@interface ViewController() <ContentGuideViewDataSource, ContentGuideViewDelegate, MPAdViewDelegate>
 
+@property (nonatomic, strong) ContentGuideView *contentGuideView;
+@property (nonatomic, strong) FavoriteView *favoriteView;
+@property (nonatomic, strong) MBProgressHUD *hud;
 @property (nonatomic) NSInteger playlistCount;
 @property (nonatomic, strong) NSString *nextPlaylistPageToken;
 @property (nonatomic, strong) NSMutableArray *playlists;
@@ -41,7 +40,6 @@
 
 @property (nonatomic, weak) IBOutlet UIView *viewContent;
 @property (nonatomic, weak) IBOutlet UIView *viewAll;
-@property (nonatomic, weak) IBOutlet UIView *viewContentGuiView;
 @property (nonatomic, weak) IBOutlet UIView *viewFavourite;
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
@@ -107,20 +105,22 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (!contentGuideView) {
-        contentGuideView = [[ContentGuideView alloc] initWithFrame:self.viewContentGuiView.bounds];
-        [contentGuideView setBackgroundColor:BACKGROUND_COLOR];
-        [contentGuideView setBackground:nil];
-        [contentGuideView setDataSource:self];
-        [contentGuideView setDelegate:self];
-        [self.viewContentGuiView addSubview:contentGuideView];
+    if (!self.contentGuideView) {
+        self.contentGuideView = [[ContentGuideView alloc] initWithFrame:self.viewAll.bounds];
+        [self.contentGuideView setBackgroundColor:BACKGROUND_COLOR];
+        [self.contentGuideView setBackground:nil];
+        [self.contentGuideView setDataSource:self];
+        [self.contentGuideView setDelegate:self];
+        [self.viewAll addSubview:self.contentGuideView];
         [self loadConfiguration];
+    } else {
+        [self updateContentGuideViewFrame];
     }
     
-    if (!favoriteView) {
-        favoriteView = [[FavoriteView alloc] initWithFrame:self.viewFavourite.bounds];
-        favoriteView.favoriteDelegate = self;
-        [self.viewFavourite addSubview:favoriteView];
+    if (!self.favoriteView) {
+        self.favoriteView = [[FavoriteView alloc] initWithFrame:self.viewFavourite.bounds];
+        self.favoriteView.favoriteDelegate = self;
+        [self.viewFavourite addSubview:self.favoriteView];
     } else {
         [self loadFavoriteData];
     }
@@ -139,7 +139,7 @@
 
 - (void)loadConfiguration {
     [self showHudLoading];
-    hud.labelText = @"Loading video...";
+    self.hud.labelText = @"Loading video...";
     [[WebAPI getShared] loadConfiguration:^(NSError *error) {
         NSLog(@"ERROR IN GETTING CONFIGURATION");
         [self hideHudLoading];
@@ -183,6 +183,21 @@
     [self.viewAdmob loadRequest:[GADRequest request]];
 }
 
+- (void)updateContentGuideViewFrame {
+    if (IS_IPAD) {
+        CGRect frame = self.contentGuideView.frame;
+        if (frame.size.height != self.viewAll.frame.size.height) {
+            frame.size.width = self.viewAll.frame.size.width;
+            frame.size.height = self.viewAll.frame.size.height;
+            [self.contentGuideView setFrame:frame];
+            [self.contentGuideView reloadData];
+            
+            [self.favoriteView setFrame:self.contentGuideView.frame];
+            [self.favoriteView reloadTableView];
+        }
+    }
+}
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                 duration:(NSTimeInterval)duration {
     [self.adView rotateToOrientation:toInterfaceOrientation];
@@ -193,6 +208,8 @@
     CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
     CGFloat bottomAlignedY = self.view.bounds.size.height - size.height;
     self.adView.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
+    
+    [self updateContentGuideViewFrame];
 }
 
 #pragma mark - <MPAdViewDelegate>
@@ -269,7 +286,7 @@
                                           [self cookVideos];
                                           [self.appDelegate.youtubeVideos addObjectsFromArray:thePlaylist.videoArray];
                                           [self.appDelegate.youtubePlaylists addObjectsFromArray:self.playlists];
-                                          [contentGuideView holdPositionReloadData];
+                                          [self.contentGuideView holdPositionReloadData];
                                           [self hideHudLoading];
                                       }
                                   }
@@ -300,16 +317,16 @@
 
 - (void)loadFavoriteData {
     NSMutableArray *theArray = [[DataManager getSharedInstance] getFavoriteArray];
-    [favoriteView initUIWithData:theArray];
+    [self.favoriteView initUIWithData:theArray];
 }
 
 - (void)showHudLoading {
-    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [hud show:YES];
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.hud show:YES];
 }
 
 - (void)hideHudLoading {
-    [hud hide:YES];
+    [self.hud hide:YES];
 }
 
 - (void)dismissController {

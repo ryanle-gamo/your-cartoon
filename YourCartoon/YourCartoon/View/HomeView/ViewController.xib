@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
@@ -14,7 +13,6 @@
                 <outlet property="viewAdmob" destination="QJR-5q-Kw8" id="HOC-kQ-DFX"/>
                 <outlet property="viewAll" destination="6h3-eZ-GeX" id="Pih-I8-F6o"/>
                 <outlet property="viewContent" destination="Noy-eP-Eia" id="YrA-3v-BEY"/>
-                <outlet property="viewContentGuiView" destination="y4d-QS-gpm" id="iEb-yT-mLG"/>
                 <outlet property="viewFavourite" destination="tgG-rw-h4h" id="21e-RC-XvZ"/>
                 <outlet property="viewHeader" destination="5A1-2p-hrH" id="K7g-4q-lab"/>
             </connections>
@@ -74,21 +72,8 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6h3-eZ-GeX" userLabel="view_all">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4d-QS-gpm" userLabel="content">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
-                                    <animations/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                            </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="y4d-QS-gpm" firstAttribute="top" secondItem="6h3-eZ-GeX" secondAttribute="top" id="1xJ-d9-F4y"/>
-                                <constraint firstItem="y4d-QS-gpm" firstAttribute="leading" secondItem="6h3-eZ-GeX" secondAttribute="leading" id="JkR-da-wG1"/>
-                                <constraint firstAttribute="trailing" secondItem="y4d-QS-gpm" secondAttribute="trailing" id="dUM-2C-vUx"/>
-                                <constraint firstAttribute="bottom" secondItem="y4d-QS-gpm" secondAttribute="bottom" id="fVr-hH-dl0"/>
-                            </constraints>
                         </view>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgG-rw-h4h" userLabel="view_favourite">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
