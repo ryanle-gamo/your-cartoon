@@ -166,18 +166,21 @@
 }
 
 - (void)loadAds1 {
-    if (IS_IPAD) {
-        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID_IPAD size:MOPUB_LEADERBOARD_SIZE];
-    } else {
-        self.adView = [[MPAdView alloc] initWithAdUnitId:MOPUB_BANNER_ID size:MOPUB_BANNER_SIZE];
+    if (self.appDelegate.configuration.mopub_banner_id.length > 0)
+    {
+        if (IS_IPAD) {
+            self.adView = [[MPAdView alloc] initWithAdUnitId:self.appDelegate.configuration.mopub_banner_id_ipad size:MOPUB_LEADERBOARD_SIZE];
+        } else {
+            self.adView = [[MPAdView alloc] initWithAdUnitId:self.appDelegate.configuration.mopub_banner_id size:MOPUB_BANNER_SIZE];
+        }
+        self.adView.delegate = self;
+        CGRect frame = self.adView.frame;
+        CGSize size = [self.adView adContentViewSize];
+        frame.origin.y = self.viewAd1.frame.size.height - size.height;
+        self.adView.frame = frame;
+        [self.viewAd1 addSubview:self.adView];
+        [self.adView loadAd];
     }
-    self.adView.delegate = self;
-    CGRect frame = self.adView.frame;
-    CGSize size = [self.adView adContentViewSize];
-    frame.origin.y = self.viewAd1.frame.size.height - size.height;
-    self.adView.frame = frame;
-    [self.viewAd1 addSubview:self.adView];
-    [self.adView loadAd];
 }
 
 - (void)loadAds2 {

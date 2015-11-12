@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) NSString *admob_banner_id;
 @property (nonatomic, strong) NSString *admob_interstitial_id;
+@property (nonatomic, strong) NSString *mopub_banner_id;
+@property (nonatomic, strong) NSString *mopub_banner_id_ipad;
 
 @property (nonatomic, strong) NSString *authentication_key;
 @property (nonatomic, strong) NSString *channel_id;
