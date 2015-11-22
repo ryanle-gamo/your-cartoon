@@ -311,10 +311,25 @@
 
 - (void)cookVideos
 {
-    for (PLObject *playlist in self.playlists) {
+    for (NSInteger i = 0; i < self.playlists.count; i++) {
+        PLObject *playlist = [self.playlists objectAtIndex:i];
         NSMutableArray *videos = playlist.videoArray;
-        for (VideoObject *video in videos) {
-            video.plName = playlist.plName;
+        for (NSInteger j = 0; j < videos.count; j++) {
+            VideoObject *video = [videos objectAtIndex:j];
+            if ([video.videoName isEqualToString:DELETED_VIDEO])
+            {
+                [videos removeObjectAtIndex:j];
+                j -= 1;
+            }
+            else
+            {
+                video.plName = playlist.plName;
+            }
+        }
+        if (videos.count == 0)
+        {
+            [self.playlists removeObjectAtIndex:i];
+            i -= 1;
         }
     }
 }

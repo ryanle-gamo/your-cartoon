@@ -9,6 +9,7 @@
 #import "FavoriteView.h"
 #import "FavoriteTableViewCell.h"
 #import "VideoObject.h"
+#import "DataManager.h"
 
 @interface FavoriteView()
 @property (nonatomic, strong) NSMutableArray *favoriteArray;
@@ -60,6 +61,22 @@
         return 115;
     }
     return 90;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        VideoObject *theItem = [self.favoriteArray objectAtIndex:indexPath.row];
+        [[DataManager getSharedInstance] removeFavoriteWithObject:theItem];
+        self.favoriteArray = [[DataManager getSharedInstance] getFavoriteArray];
+        [self.tblFavorite reloadData];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

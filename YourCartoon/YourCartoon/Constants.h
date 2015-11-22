@@ -17,6 +17,8 @@
 #define STARTAPP_APP_ID @"206835170"
 #define STARTAPP_DEV_ID @"101443341"
 
+#define DELETED_VIDEO @"Deleted video"
+
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))

@@ -22,6 +22,7 @@
 
 @interface GridViewController ()<MPAdViewDelegate>
 
+@property (nonatomic, assign) BOOL isFirstLoad;
 @property (nonatomic, strong) ContentGuideView *contentGuideView;
 @property (nonatomic, strong) PLObject *playlist;
 @property (nonatomic, strong) NSString *nextPlaylistPageToken;
@@ -70,6 +71,7 @@
     self.requestOperationManager = [AFHTTPRequestOperationManager manager];
     self.requestOperationManager.requestSerializer = [AFJSONRequestSerializer serializer];
     self.nextPlaylistPageToken = @"";
+    self.isFirstLoad = YES;
     
     [self loadAds1];
     [self loadAds2];
@@ -125,7 +127,15 @@
                                   self.nextPlaylistPageToken = [responseObject valueForKey:@"nextPageToken"];
                                   self.videos = [VideoObject arrayFromDictionary:responseObject];
                                   [self cookVideos];
-                                  [self.playlist.videoArray addObjectsFromArray:self.videos];
+                                  if (self.isFirstLoad)
+                                  {
+                                      [self setIsFirstLoad:NO];
+                                      self.playlist.videoArray = self.videos;
+                                  }
+                                  else
+                                  {
+                                      [self.playlist.videoArray addObjectsFromArray:self.videos];
+                                  }
                                   [self.contentGuideView holdPositionReloadData];
                                   [self hideHudLoading];
                               }
@@ -136,8 +146,17 @@
 
 - (void)cookVideos
 {
-    for (VideoObject *video in self.videos) {
-        video.plName = self.playlist.plName;
+    for (NSInteger i = 0; i < self.videos.count; i++) {
+        VideoObject *video = [self.videos objectAtIndex:i];
+        if ([video.videoName isEqualToString:DELETED_VIDEO])
+        {
+            [self.videos removeObjectAtIndex:i];
+            i -= 1;
+        }
+        else
+        {
+            video.plName = self.playlist.plName;
+        }
     }
 }
 
