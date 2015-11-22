@@ -14,38 +14,35 @@
 #define YOUTUBE_VIDEO_URL @"https://www.googleapis.com/youtube/v3/videos?id=%@&part=contentDetails&key=%@"
 
 //######## YOUCARTOON #######
-#define URL_CONFIGURATION       @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/youcartoon/youcartoon_configuration.json"
 
+#define URL_CONFIGURATION       @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/youcartoon/youcartoon_configuration.json"
 #define AIRPUSH_ID @"289138"
 #define STARTAPP_APP_ID @"206835170"
 #define STARTAPP_DEV_ID @"101443341"
 
-#define FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:14.0f]
-#define IPAD_FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:16.0f]
 #define TITLE_COLOR [UIColor colorWithRed:253.0f/255.0f green:253.0f/255.0f blue:253.0f/255.0f alpha:1.0f]
 #define SUB_TITLE_COLOR [UIColor colorWithRed:161.0f/255.0f green:161.0f/255.0f blue:161.0f/255.0f alpha:1.0f]
 #define BACKGROUND_COLOR [UIColor colorWithRed:29.0f/255.0f green:29.0f/255.0f blue:29.0f/255.0f alpha:1.0f]
 #define HEADER_COLOR [UIColor colorWithRed:27.0f/255.0f green:27.0f/255.0f blue:27.0f/255.0f alpha:1.0f]
 #define MENU_HEADER_COLOR [UIColor colorWithRed:89.0f/255.0f green:89.0f/255.0f blue:89.0f/255.0f alpha:1.0f]
-#define USERDEFAULT_FAVORITE @"USERDEFAULT_FAVORITE"        //format: categoryId_animeId$$categoryId_animeId
-#define USERDEFAULT_DOWNLOADED @"USERDEFAULT_DOWNLOADED"    //format: categoryId_animeId$$categoryId_animeId
-#define USERDEFAULT_VERSION @"USERDEFAULT_VERSION"
-#define YOUTUBE_THUMBNAIL_IMAGE @"https://img.youtube.com/vi/%@/sddefault.jpg"
 
 #define BACKGROUND_COLOR_ROWHEADER [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
-#define PANDING_LEFT_CONTENT_GUIDE_ROW_HEADER_DEFAULT 10
-#define HEIGHT_TITLE_POSTER_DEFAULT 20
-#define HEIGHT_SUB_TITLE_POSTER_DEFAULT 15
+//######## END YOUCARTOON #######
 
+#define FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:14.0f]
+#define IPAD_FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:16.0f]
 #define FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:12.0f]
 #define FONT_SUB_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial" size:12.0f]
 #define IPAD_FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial-BoldMT" size:14.0f]
 #define IPAD_FONT_SUB_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Arial" size:14.0f]
 
+#define PANDING_LEFT_CONTENT_GUIDE_ROW_HEADER_DEFAULT 10
+#define HEIGHT_TITLE_POSTER_DEFAULT 20
+#define HEIGHT_SUB_TITLE_POSTER_DEFAULT 15
+
 #define _NUMBER_ALBUMS_ITEM_OF_ROW_ (IS_IPAD ? 4 : 2.4)
 #define _NUMBER_DETAIL_ALBUM_ITEM_OF_ROW_ (IS_IPAD ? 3 : 2)
 #define _HEIGHT_HEADER_ALBUMS_OF_ROW_ 30
-//######## END YOUCARTOON #######
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
@@ -88,5 +85,9 @@
 #define _msg_pull_to_refresh_ @"Pull to refresh"
 #define _msg_release_to_refresh_ @"Release to refresh"
 #define DELETED_VIDEO @"Deleted video"
+#define USERDEFAULT_FAVORITE @"USERDEFAULT_FAVORITE"
+#define USERDEFAULT_DOWNLOADED @"USERDEFAULT_DOWNLOADED"
+#define USERDEFAULT_VERSION @"USERDEFAULT_VERSION"
+#define YOUTUBE_THUMBNAIL_IMAGE @"https://img.youtube.com/vi/%@/sddefault.jpg"
 #endif
 
