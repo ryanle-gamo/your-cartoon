@@ -87,6 +87,10 @@
     BOOL isFavorited = [[DataManager getSharedInstance] isExistedInFavoriteArrayForObject:self.selectedVideo];
     [self markFavorite:isFavorited];
     
+    UISwipeGestureRecognizer * swipeRightToLeft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRightToLeft:)];
+    swipeRightToLeft.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRightToLeft];
+    
     if (self.selectedPlaylist) {
         if (self.selectedIndex == 0) {
             [self.videoPreviousButton setEnabled:NO];
@@ -113,6 +117,11 @@
         return NO;
     }
     return YES;
+}
+
+- (void)swipeRightToLeft:(UISwipeGestureRecognizer*)gestureRecognizer
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

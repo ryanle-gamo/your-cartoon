@@ -73,10 +73,19 @@
     self.nextPlaylistPageToken = @"";
     self.isFirstLoad = YES;
     
+    UISwipeGestureRecognizer * swipeRightToLeft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRightToLeft:)];
+    swipeRightToLeft.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRightToLeft];
+    
     [self loadAds1];
     [self loadAds2];
     [self loadAds3];
     [self loadAdmob];
+}
+
+- (void)swipeRightToLeft:(UISwipeGestureRecognizer*)gestureRecognizer
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
