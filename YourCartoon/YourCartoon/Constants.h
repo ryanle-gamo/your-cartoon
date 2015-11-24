@@ -13,9 +13,23 @@
 #define YOUTUBE_PLAYLIST_ITEMS_URL @"https://www.googleapis.com/youtube/v3/playlistItems?%@part=snippet&maxResults=%d&playlistId=%@&key=%@"
 #define YOUTUBE_VIDEO_URL @"https://www.googleapis.com/youtube/v3/videos?id=%@&part=contentDetails&key=%@"
 
-//######## YOUCARTOON #######
+////######## YOUCARTOON #######
+//#define URL_CONFIGURATION @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/youcartoon/youcartoon_configuration.json"
+//#define AIRPUSH_ID @"289138"
+//#define STARTAPP_APP_ID @"206835170"
+//#define STARTAPP_DEV_ID @"101443341"
+//
+//#define TITLE_COLOR [UIColor colorWithRed:253.0f/255.0f green:253.0f/255.0f blue:253.0f/255.0f alpha:1.0f]
+//#define SUB_TITLE_COLOR [UIColor colorWithRed:161.0f/255.0f green:161.0f/255.0f blue:161.0f/255.0f alpha:1.0f]
+//#define BACKGROUND_COLOR [UIColor colorWithRed:29.0f/255.0f green:29.0f/255.0f blue:29.0f/255.0f alpha:1.0f]
+//#define HEADER_COLOR [UIColor colorWithRed:27.0f/255.0f green:27.0f/255.0f blue:27.0f/255.0f alpha:1.0f]
+//#define MENU_HEADER_COLOR [UIColor colorWithRed:89.0f/255.0f green:89.0f/255.0f blue:89.0f/255.0f alpha:1.0f]
+//
+//#define BACKGROUND_COLOR_ROWHEADER [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
+////######## END YOUCARTOON #######
 
-#define URL_CONFIGURATION       @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/youcartoon/youcartoon_configuration.json"
+//######## ENGLISH VIDEOS #######
+#define URL_CONFIGURATION @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/englishvideos/englishvideos_configuration.json"
 #define AIRPUSH_ID @"289138"
 #define STARTAPP_APP_ID @"206835170"
 #define STARTAPP_DEV_ID @"101443341"
