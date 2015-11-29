@@ -89,7 +89,7 @@
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    return STATUS_BAR_COLOR_INDEX;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

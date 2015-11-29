@@ -33,7 +33,7 @@
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    return STATUS_BAR_COLOR_INDEX;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
