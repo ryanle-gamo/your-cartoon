@@ -48,6 +48,7 @@
 //######## END ENGLISH VIDEOS #######
 
 #define FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Helvetica" size:14.0f]
+#define FONT_SUB_TITLE_MENU_CELL [UIFont fontWithName:@"Helvetica" size:13.0f]
 #define IPAD_FONT_TITLE_ROW_HEADER_DEFAULT [UIFont fontWithName:@"Helvetica" size:16.0f]
 #define FONT_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Helvetica" size:12.0f]
 #define FONT_SUB_TITLE_POSTER_DEFAULT [UIFont fontWithName:@"Helvetica-Light" size:12.0f]

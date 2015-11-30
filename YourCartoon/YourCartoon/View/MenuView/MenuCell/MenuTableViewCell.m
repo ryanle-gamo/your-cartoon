@@ -17,8 +17,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    [self.lblItemTitle setFont:[UIFont fontWithName:@"ArialMT" size:14.0f]];
-    [self.lblItemCount setFont:[UIFont fontWithName:@"ArialMT" size:13.0f]];
+    [self.lblItemTitle setFont:FONT_TITLE_ROW_HEADER_DEFAULT];
+    [self.lblItemCount setFont:FONT_SUB_TITLE_MENU_CELL];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -33,7 +33,10 @@
                            placeholderImage:[UIImage imageNamed:@"place_holder.png"]];
     [self.imgvItemThumbnail setContentMode:UIViewContentModeScaleAspectFit];
     [self.lblItemTitle setText:object.plName];
-    [self.lblItemCount setText:[NSString stringWithFormat:@"%d videos", (int)object.videoArray.count]];
+    if (IS_IPAD)
+    {
+        [self.lblItemCount setText:[NSString stringWithFormat:@"%d+ videos", (int)object.videoArray.count]];
+    }
 }
 
 @end
