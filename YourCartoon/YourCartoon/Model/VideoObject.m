@@ -9,7 +9,7 @@
 #import "VideoObject.h"
 #include <stdlib.h>
 
-#define RANDOM_MAX 2000000
+#define RANDOM_MAX 1000000
 #define RANDOM_MIN 500000
 @implementation VideoObject
 
@@ -32,7 +32,11 @@
     self.videoId = [resourceDictionary valueForKey:@"videoId"];
     self.videoLink = [NSString stringWithFormat:@"https://www.youtube.com/watch?v=%@", self.videoId];
     self.viewCount = [self getRandomViewCount];
-    NSDictionary *thumbnailDictionary = [json valueForKeyPath:@"thumbnails.medium"];
+    NSDictionary *thumbnailDictionary = [json valueForKeyPath:@"thumbnails.high"];
+    if (!thumbnailDictionary)
+    {
+        thumbnailDictionary = [json valueForKeyPath:@"thumbnails.medium"];
+    }
     self.videoThumbnail = [thumbnailDictionary valueForKey:@"url"];
 }
 
