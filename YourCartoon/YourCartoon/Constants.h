@@ -104,6 +104,7 @@
 #define _msg_pull_to_refresh_ @"Pull to refresh"
 #define _msg_release_to_refresh_ @"Release to refresh"
 #define DELETED_VIDEO @"Deleted video"
+#define PRIVATE_VIDEO @"Private video"
 #define USERDEFAULT_FAVORITE @"USERDEFAULT_FAVORITE"
 #define USERDEFAULT_DOWNLOADED @"USERDEFAULT_DOWNLOADED"
 #define USERDEFAULT_VERSION @"USERDEFAULT_VERSION"
