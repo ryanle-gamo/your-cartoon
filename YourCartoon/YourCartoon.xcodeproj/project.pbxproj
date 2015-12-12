@@ -722,7 +722,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YourCartoon/3rdParties/Airpush_iOS_SDK_V_1.4",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vbamboo.englishvideos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vbamboo.japanesevideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -747,7 +747,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YourCartoon/3rdParties/Airpush_iOS_SDK_V_1.4",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vbamboo.englishvideos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vbamboo.japanesevideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

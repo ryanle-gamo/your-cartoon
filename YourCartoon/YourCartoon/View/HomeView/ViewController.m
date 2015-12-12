@@ -316,7 +316,7 @@
         NSMutableArray *videos = playlist.videoArray;
         for (NSInteger j = 0; j < videos.count; j++) {
             VideoObject *video = [videos objectAtIndex:j];
-            if ([video.videoName isEqualToString:DELETED_VIDEO])
+            if ([video.videoName isEqualToString:DELETED_VIDEO] || [video.videoName isEqualToString:PRIVATE_VIDEO])
             {
                 [videos removeObjectAtIndex:j];
                 j -= 1;

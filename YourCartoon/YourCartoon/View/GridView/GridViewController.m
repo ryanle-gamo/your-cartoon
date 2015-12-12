@@ -157,7 +157,7 @@
 {
     for (NSInteger i = 0; i < self.videos.count; i++) {
         VideoObject *video = [self.videos objectAtIndex:i];
-        if ([video.videoName isEqualToString:DELETED_VIDEO])
+        if ([video.videoName isEqualToString:DELETED_VIDEO] || [video.videoName isEqualToString:PRIVATE_VIDEO])
         {
             [self.videos removeObjectAtIndex:i];
             i -= 1;

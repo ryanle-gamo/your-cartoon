@@ -49,8 +49,8 @@
 
 //######## JAPANESE VIDEOS #######
 #define URL_CONFIGURATION @"https://raw.githubusercontent.com/ryanle-gamo/crazy_data/master/japanesevideos/japanese_configuration.json"
-#define AIRPUSH_ID @"294039"
-#define STARTAPP_APP_ID @"210075081"
+#define AIRPUSH_ID @"295053"
+#define STARTAPP_APP_ID @"211051414"
 #define STARTAPP_DEV_ID @"101443341"
 
 #define TITLE_COLOR [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0f]
@@ -120,6 +120,7 @@
 #define _msg_pull_to_refresh_ @"Pull to refresh"
 #define _msg_release_to_refresh_ @"Release to refresh"
 #define DELETED_VIDEO @"Deleted video"
+#define PRIVATE_VIDEO @"Private video"
 #define USERDEFAULT_FAVORITE @"USERDEFAULT_FAVORITE"
 #define USERDEFAULT_DOWNLOADED @"USERDEFAULT_DOWNLOADED"
 #define USERDEFAULT_VERSION @"USERDEFAULT_VERSION"
