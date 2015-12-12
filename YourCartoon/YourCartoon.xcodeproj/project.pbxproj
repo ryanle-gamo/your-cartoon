@@ -707,7 +707,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 849BF355EA5C1A96A6663650 /* Pods-YourCartoon.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-YE";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-YJ";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -732,7 +732,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0ED5A69B345F4CBE9D49F173 /* Pods-YourCartoon.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-YE";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-YJ";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
