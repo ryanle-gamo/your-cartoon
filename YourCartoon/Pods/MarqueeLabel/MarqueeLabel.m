@@ -180,7 +180,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     // Since we're a UILabel, we actually do implement all of UILabel's properties.
     // We don't care about these values, we just want to forward them on to our sublabel.
     NSArray *properties = @[@"baselineAdjustment", @"enabled", @"highlighted", @"highlightedTextColor",
-                            @"minimumFontSize", @"shadowOffset", @"textAlignment",
+                            @"minimumFontSize", @"textAlignment",
                             @"userInteractionEnabled", @"adjustsFontSizeToFitWidth",
                             @"lineBreakMode", @"numberOfLines"];
     
@@ -190,6 +190,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     self.subLabel.textColor = super.textColor;
     self.subLabel.backgroundColor = (super.backgroundColor == nil ? [UIColor clearColor] : super.backgroundColor);
     self.subLabel.shadowColor = super.shadowColor;
+    self.subLabel.shadowOffset = super.shadowOffset;
     for (NSString *property in properties) {
         id val = [super valueForKey:property];
         [self.subLabel setValue:val forKey:property];
@@ -445,8 +446,8 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     
     // Get size of subLabel
     expectedLabelSize = [self.subLabel sizeThatFits:maximumLabelSize];
-    // Sanitize width to 8192 (largest width a UILabel will draw)
-    expectedLabelSize.width = ceil(MIN(expectedLabelSize.width, 8192.0f));
+    // Sanitize width to 5461.0f (largest width a UILabel will draw on an iPhone 6S Plus)
+    expectedLabelSize.width = ceil(MIN(expectedLabelSize.width, 5461.0f));
     // Adjust to own height (make text baseline match normal label)
     expectedLabelSize.height = self.bounds.size.height;
     
@@ -957,6 +958,9 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
 #pragma mark - Label Control
 
 - (void)restartLabel {
+    // Shutdown the label
+    [self shutdownLabel];
+    // Restart scrolling if appropriate
     if (self.labelShouldScroll && !self.tapToScroll && !self.holdScrolling) {
         [self beginScroll];
     }
@@ -969,12 +973,16 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
 }
 
 - (void)shutdownLabel {
+    // Bring label to home location
     [self returnLabelToOriginImmediately];
+    // Apply gradient mask for home location
+    [self applyGradientMaskForFadeLength:self.fadeLength animated:false];
 }
 
 -(void)pauseLabel
 {
-    if (!self.isPaused) {
+    // Only pause if label is not already paused, and already in a scrolling animation
+    if (!self.isPaused && self.awayFromHome) {
         // Pause sublabel position animation
         CFTimeInterval labelPauseTime = [self.subLabel.layer convertTime:CACurrentMediaTime() fromLayer:nil];
         self.subLabel.layer.speed = 0.0;

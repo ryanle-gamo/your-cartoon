@@ -86,8 +86,8 @@
 }
 
 - (BOOL)checkNetworkStatus {
-    NetworkStatus internetConectionStatus = [[MPReachability reachabilityForInternetConnection] currentReachabilityStatus];
-    if (internetConectionStatus == NotReachable){
+    MPNetworkStatus internetConectionStatus = [[MPReachability reachabilityForInternetConnection] currentReachabilityStatus];
+    if (internetConectionStatus == MPNotReachable){
         return NO;
     }
     return YES;

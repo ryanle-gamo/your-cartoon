@@ -607,6 +607,7 @@
 		62486BC30CA31FBB00C8D7FD50BE6259 /* MOPUBActivityIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MOPUBActivityIndicatorView.m; path = MoPubSDK/NativeVideo/Internal/MOPUBActivityIndicatorView.m; sourceTree = "<group>"; };
 		62C8CB366D1A0CFFB7FB1CCAC213CB0A /* MPLastResortDelegate+EventKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MPLastResortDelegate+EventKit.h"; path = "MoPubSDK/Internal/Common/MPLastResortDelegate+EventKit.h"; sourceTree = "<group>"; };
 		6360A47709A35CF8A31C9936FAF181C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		63BFA2D2159E9D68B730C6AE730F5745 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.6.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		6551883A641A0A643CDFC5C68A8C6CE5 /* MRVideoPlayerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRVideoPlayerManager.h; path = MoPubSDK/Internal/MRAID/MRVideoPlayerManager.h; sourceTree = "<group>"; };
 		665BF844467F08D1C16A55DE2813217C /* MPNativeAdError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPNativeAdError.m; path = "MoPubSDK/Native Ads/MPNativeAdError.m"; sourceTree = "<group>"; };
 		67F28EF73291390A84AF955E3DEAF6FA /* MPNativeAdError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPNativeAdError.h; path = "MoPubSDK/Native Ads/MPNativeAdError.h"; sourceTree = "<group>"; };
@@ -770,7 +771,6 @@
 		CB11DB43057F7E8F3790B29D408453DD /* MPServerAdPositioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPServerAdPositioning.h; path = "MoPubSDK/Native Ads/MPServerAdPositioning.h"; sourceTree = "<group>"; };
 		CB392E3CF703BB1DA341922414F3C1B2 /* MPVASTCompanionAd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPVASTCompanionAd.h; path = MoPubSDK/Internal/VAST/MPVASTCompanionAd.h; sourceTree = "<group>"; };
 		CBC9B3916AB376AB81E7303B1C186C69 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		CC71384D90E02EB0ED93101721237C27 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.5.1/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		CD69BEE843EFD1C4988145BE6875E8FD /* MRController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRController.m; path = MoPubSDK/Internal/MRAID/MRController.m; sourceTree = "<group>"; };
 		CDA9DF4AA575649FA9F3A0EA0611CD1F /* MPBaseBannerAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPBaseBannerAdapter.h; path = MoPubSDK/Internal/Banners/MPBaseBannerAdapter.h; sourceTree = "<group>"; };
 		CE2DA3A7B57DD3ED422E5FD85E1AC065 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -1362,6 +1362,14 @@
 			path = "../Target Support Files/AFNetworking";
 			sourceTree = "<group>";
 		};
+		2B2720F1B497A9F45904D4CCCB85688E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63BFA2D2159E9D68B730C6AE730F5745 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34C7D909F873CE4BD9C540F67E9C7760 /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -1376,7 +1384,7 @@
 		574A36DAA21DAE9578F0D063AE72C0A7 /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				8A9B384848603986AF79A110B43CFF2D /* Frameworks */,
+				2B2720F1B497A9F45904D4CCCB85688E /* Frameworks */,
 			);
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
@@ -1458,14 +1466,6 @@
 				77002CE022BCE6C8DB272A8655148BAD /* Support Files */,
 			);
 			path = "mopub-ios-sdk";
-			sourceTree = "<group>";
-		};
-		8A9B384848603986AF79A110B43CFF2D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CC71384D90E02EB0ED93101721237C27 /* GoogleMobileAds.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8A9DE290FC1E7AE99CC858E4A379B071 /* Security */ = {
